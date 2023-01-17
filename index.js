@@ -43,6 +43,8 @@ app.use("/wishlists", wishlistRoute)
 
 app.use("/checkout", stripeRoute);
 
+mongoose.set('strictQuery', false);
+
 mongoose.connect( process.env.MONGO_URL )
 .then(()=>{
     console.log("DB connection successfull")
